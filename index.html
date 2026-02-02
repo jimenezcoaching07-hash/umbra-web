@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM COACHING x UMBRA TRAINING</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #f0f0f0;
+            --accent-clean: #ffffff;
+            --accent-red: #ff3333;   
+            --accent-purple: #b366ff;
+            --card-bg: #111111;
+            --border: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
+
+        /* BARRA FLOTANTE ANUALIDAD (AHORA ROJA) */
+        .floating-promo {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: rgba(10,10,10,0.95); border: 1px solid var(--accent-red); /* Borde Rojo */
+            padding: 20px 30px; border-radius: 12px; z-index: 1000;
+            display: flex; align-items: center; gap: 20px;
+            box-shadow: 0 0 30px rgba(255, 51, 51, 0.3); /* Brillo Rojo */
+            width: 90%; max-width: 700px;
+            backdrop-filter: blur(10px);
+            animation: slideUp 1s ease-out forwards;
+        }
+        .promo-content { flex-grow: 1; }
+        .promo-badge { background: var(--accent-red); color: #fff; padding: 3px 8px; font-size: 0.7rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-bottom: 5px; display: inline-block; }
+        .promo-title { font-family: 'Oswald'; font-size: 1.2rem; color: #fff; line-height: 1.2; text-shadow: 0 0 10px rgba(255, 51, 51, 0.5); }
+        .promo-desc { font-size: 0.85rem; color: #ccc; margin-top: 5px; }
+        .btn-promo {
+            background: linear-gradient(45deg, #cc0000, #ff3333); /* Gradiente Rojo */
+            color: #fff; padding: 12px 25px; border-radius: 30px; text-decoration: none;
+            font-weight: 700; font-family: 'Oswald'; white-space: nowrap; transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+        }
+        .btn-promo:hover { transform: scale(1.05); box-shadow: 0 5px 25px rgba(255, 0, 0, 0.6); }
+        .close-promo { color: #555; cursor: pointer; font-size: 1.5rem; margin-left: 10px; }
+
+        @keyframes slideUp { from {bottom:-150px;} to {bottom:20px;} }
+
+        /* HERO */
+        .hero {
+            height: 90vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: radial-gradient(circle at center, #151515 0%, #000 100%);
+            text-align: center; padding: 20px;
+        }
+        
+        .hero-main-line {
+            display: flex; align-items: center; justify-content: center; gap: 15px;
+            flex-wrap: wrap; margin-bottom: 10px;
+        }
+
+        /* ANIMACIÓN DE TEXTO */
+        @keyframes neon-pulse-red {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 51, 51, 0.4), 0 0 20px rgba(255, 51, 51, 0.2); }
+            50% { text-shadow: 0 0 25px rgba(255, 51, 51, 0.9), 0 0 50px rgba(255, 51, 51, 0.6); transform: scale(1.02); }
+        }
+
+        @keyframes neon-pulse-purple {
+            0%, 100% { text-shadow: 0 0 10px rgba(179, 102, 255, 0.4), 0 0 20px rgba(179, 102, 255, 0.2); }
+            50% { text-shadow: 0 0 25px rgba(179, 102, 255, 0.9), 0 0 50px rgba(179, 102, 255, 0.6); transform: scale(1.02); }
+        }
+
+        .jm-text {
+            font-family: 'Oswald'; font-size: 4rem; font-weight: 700;
+            color: var(--accent-red);
+            letter-spacing: -1px;
+            animation: neon-pulse-red 3s infinite alternate ease-in-out;
+        }
+
+        .x-text { font-family: 'Oswald'; font-size: 2rem; color: #555; font-weight: 300; margin: 0 10px; }
+
+        .umbra-container { display: flex; align-items: center; gap: 15px; }
+        
+        .umbra-text {
+            font-family: 'Oswald'; font-size: 4rem; font-weight: 700;
+            color: var(--accent-purple);
+            letter-spacing: 2px;
+            animation: neon-pulse-purple 3s infinite alternate ease-in-out;
+            animation-delay: 1.5s;
+        }
+
+        /* LOGO ESTÁ DE VUELTA */
+        .logo-mini {
+            width: 50px; height: 50px;
+            animation: spin-float 8s infinite linear;
+            filter: drop-shadow(0 0 10px rgba(179, 102, 255, 0.5));
+        }
+
+        @keyframes spin-float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        /* PAQUETES */
+        .packages-section { padding: 50px 20px 200px; max-width: 1300px; margin: 0 auto; }
+        .cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
+            padding: 40px; position: relative; transition: 0.4s; display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent-clean); }
+        
+        .card-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #222; }
+        .plan-name { font-family: 'Oswald'; font-size: 2rem; color: #fff; }
+        .plan-price { font-size: 3rem; font-weight: 800; color: #fff; margin: 15px 0; }
+        .plan-sub { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .features-list { list-style: none; flex-grow: 1; margin-bottom: 40px; }
+        .features-list li { margin-bottom: 15px; font-size: 0.95rem; color: #bbb; display: flex; gap: 12px; line-height: 1.5; }
+        .features-list li::before { content: "•"; color: var(--accent-clean); font-size: 1.2rem; line-height: 1; }
+        
+        .btn-card {
+            display: block; width: 100%; padding: 18px; text-align: center;
+            background: #222; color: #fff; text-decoration: none; font-family: 'Oswald';
+            text-transform: uppercase; font-weight: 700; letter-spacing: 1px; border-radius: 8px;
+            transition: 0.3s; border: 1px solid #444;
+        }
+        .card:hover .btn-card { background: #fff; color: #000; }
+
+        .price-highlight { color: var(--accent-red); }
+
+        /* FAQ */
+        .faq-section { max-width: 800px; margin: 0 auto; padding: 50px 20px; padding-bottom: 150px; }
+        .faq-item { margin-bottom: 30px; }
+        .faq-q { color: #fff; font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; }
+        .faq-a { color: #aaa; line-height: 1.6; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-main-line { flex-direction: column; gap: 5px; }
+            .jm-text, .umbra-text { font-size: 2.8rem; }
+            .x-text { transform: rotate(90deg); margin: 10px 0; font-size: 1.5rem; }
+            .floating-promo { flex-direction: column; text-align: center; }
+            
+            .card { padding: 25px 20px; }
+            .plan-name { font-size: 1.8rem; word-wrap: break-word; }
+            .plan-price { font-size: 2.5rem; }
+            .features-list li { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA FLOTANTE ANUALIDAD (ROJA) -->
+    <div class="floating-promo" id="promoBar">
+        <div class="promo-content">
+            <span class="promo-badge">🔥 ÚLTIMA OPORTUNIDAD</span>
+            <div class="promo-title">¿DECIDIDO A TRANSFORMARTE EN SERIO?</div>
+            <div class="promo-desc">
+                Accede a la <strong>Anualidad Elite</strong> con <strong>50% DE DESCUENTO</strong>.<br>
+                Pago único de <span style="color: #fff; font-weight: 700;">$5,645</span> (o 3 MSI). Incluye todo el Plan Premium por 12 meses.
+            </div>
+        </div>
+        <a href="https://mpago.li/11xQys5" class="btn-promo">ASEGURAR MI CUPO</a>
+        <div class="close-promo" onclick="document.getElementById('promoBar').style.display='none'">×</div>
+    </div>
+
+    <!-- HERO (CON LOGO) -->
+    <section class="hero">
+        <div class="hero-main-line">
+            <span class="jm-text">JM COACHING</span>
+            <span class="x-text">X</span>
+            <div class="umbra-container">
+                <span class="umbra-text">UMBRA</span>
+                <img src="logo.png" class="logo-mini" alt="Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- PAQUETES -->
+    <section class="packages-section">
+        
+        <!-- PLAN 1 -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="plan-name">BÁSICO</h3>
+                <div class="plan-price">$850</div>
+                <div class="plan-sub">MXN / MES</div>
+            </div>
+            <ul class="features-list">
+                <li><strong>Plan de Entrenamiento Personalizado (PDF):</strong> Rutina estructurada específicamente para tus objetivos y equipo disponible.</li>
+                <li><strong>Guía Nutricional a Medida (PDF):</strong> Cálculo de macros y menú ejemplo adaptado a tus gustos.</li>
+                <li><strong>Seguimiento Mensual:</strong> Revisión de progreso cada 30 días para ajustar variables.</li>
+                <li><strong>Resolución de Dudas:</strong> Acceso a soporte 1 vez al mes para aclarar inquietudes puntuales.</li>
+                <li><em>Ideal para: Personas autodidactas que solo necesitan el mapa para llegar al tesoro.</em></li>
+            </ul>
+            <a href="https://mpago.la/29G5u8z" class="btn-card">COMENZAR BÁSICO</a>
+        </div>
+
+        <!-- PLAN 2 (PREMIUM) -->
+        <div class="card" style="border-color: var(--accent-red); box-shadow: 0 0 20px rgba(255, 51, 51, 0.1);">
+            <div class="card-header">
+                <div style="color: var(--accent-red); font-size: 0.8rem; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px;">RECOMENDADO</div>
+                <h3 class="plan-name">PREMIUM</h3>
+                <div class="plan-price price-highlight" style="color: var(--accent-red);">$1,299</div>
+                <div class="plan-sub">MXN / MES</div>
+            </div>
+            <ul class="features-list">
+                <li><strong>📲 Acceso TOTAL a App Kahunas:</strong> Tu centro de mando. Registra cargas, ve videos de técnica y visualiza tu progreso en gráficas.</li>
+                <li><strong>Videollamada Inicial de Estrategia:</strong> Trazamos el plan juntos basándonos en tu estilo de vida real.</li>
+                <li><strong>Checks Quincenales + Feedback:</strong> No estás solo. Cada 15 días ajustamos tuercas para evitar estancamientos.</li>
+                <li><strong>Resolución de Dudas SEMANAL:</strong> Soporte directo para que nunca te quedes con preguntas.</li>
+                <li><strong>🎓 Acceso a UMBRA ACADEMY:</strong> Biblioteca exclusiva con clases grabadas sobre biomecánica, nutrición y suplementación.</li>
+                <li><em>El plan definitivo para garantizar resultados.</em></li>
+            </ul>
+            <a href="https://mpago.la/1x8c2ct" class="btn-card" style="background: var(--accent-red); border:none;">QUIERO EL PLAN PREMIUM</a>
+        </div>
+
+        <!-- PLAN 3 (TRIMESTRAL) -->
+        <div class="card">
+            <div class="card-header">
+                <div style="color: var(--accent-red); font-size: 0.8rem; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px;">OFERTA ÚNICA</div>
+                <h3 class="plan-name">TRIMESTRAL PRO</h3>
+                <div class="plan-price">$2,799</div>
+                <div class="plan-sub">PAGO ÚNICO (SOLO 5 LUGARES)</div>
+            </div>
+            <ul class="features-list">
+                <li><strong>Todo el poder del Plan Premium x 3 Meses.</strong></li>
+                <li><strong>🏋️‍♂️ BONUS EXCLUSIVO: 1 Entrenamiento Presencial:</strong> Sesión técnica 1 a 1 en XS Gym para corregir postura y llevarte al fallo real.</li>
+                <li><strong>Ahorro Inteligente:</strong> Obtienes un precio mensual reducido al comprometerte 90 días.</li>
+                <li><strong>Prioridad en Dudas:</strong> Tu chat sube de nivel en mi lista de prioridad.</li>
+            </ul>
+            <a href="https://mpago.li/32b7TdD" class="btn-card">APROVECHAR OFERTA</a>
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <h2 style="text-align: center; color: #fff; margin-bottom: 40px; font-family:'Oswald';">PREGUNTAS FRECUENTES</h2>
+        
+        <div class="faq-item">
+            <div class="faq-q">¿Cuándo inicia mi plan?</div>
+            <div class="faq-a">Tu transformación comienza el día que tú decidas. Al realizar tu pago, tienes la flexibilidad de activar tu plan inmediatamente o reservar tu fecha de inicio para coordinar con tus tiempos. Tu lugar queda asegurado.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">¿Es para principiantes?</div>
+            <div class="faq-a">Absolutamente. De hecho, empezar con una estructura profesional como la de Umbra (basada en ciencia, no en mitos) te ahorrará años de errores y lesiones. Adaptamos el volumen y la intensidad a tu nivel actual.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">¿Qué métodos de pago aceptas?</div>
+            <div class="faq-a">Aceptamos todas las tarjetas de crédito, débito y pagos en efectivo de forma 100% segura a través de Mercado Pago. También ofrecemos facilidades de meses sin intereses en planes Trimestrales y Anuales.</div>
+        </div>
+    </section>
+
+</body>
+</html>
