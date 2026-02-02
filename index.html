@@ -16,8 +16,40 @@
             --border: #333333;
         }
 
+        /* OPTIMIZACIÓN DE RENDIMIENTO Y SCROLL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
+        
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            font-family: 'Manrope', sans-serif; 
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+            scroll-behavior: smooth;
+        }
+
+        /* Reducción de carga gráfica en animaciones para móvil */
+        @media (max-width: 768px) {
+            .logo-mini {
+                animation: none; /* Quitamos giro pesado en móvil */
+                width: 40px; height: 40px;
+            }
+            
+            /* Simplificamos sombras para ganar FPS */
+            .jm-text, .umbra-text {
+                text-shadow: 0 0 10px rgba(255, 51, 51, 0.5); 
+                animation: none; /* Quitamos pulso neón pesado en móvil */
+            }
+            
+            .card:hover {
+                transform: none; /* Quitamos efecto hover 3D en touch */
+                box-shadow: none;
+            }
+            
+            /* Mejora el layout para que no baile */
+            .hero { height: auto; min-height: 80vh; padding-top: 100px; }
+            .packages-section { padding-top: 20px; }
+        }
 
         /* BARRA FLOTANTE ANUALIDAD (ROJA TOTAL Y OPTIMIZADA MÓVIL) */
         .floating-promo {
