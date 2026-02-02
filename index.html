@@ -19,28 +19,28 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
 
-        /* BARRA FLOTANTE ANUALIDAD (AHORA ROJA) */
+        /* BARRA FLOTANTE ANUALIDAD */
         .floating-promo {
             position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-            background: rgba(10,10,10,0.95); border: 1px solid var(--accent-red); /* Borde Rojo */
+            background: rgba(10,10,10,0.95); border: 1px solid var(--accent-purple);
             padding: 20px 30px; border-radius: 12px; z-index: 1000;
             display: flex; align-items: center; gap: 20px;
-            box-shadow: 0 0 30px rgba(255, 51, 51, 0.3); /* Brillo Rojo */
+            box-shadow: 0 0 30px rgba(179, 102, 255, 0.2);
             width: 90%; max-width: 700px;
             backdrop-filter: blur(10px);
             animation: slideUp 1s ease-out forwards;
         }
         .promo-content { flex-grow: 1; }
         .promo-badge { background: var(--accent-red); color: #fff; padding: 3px 8px; font-size: 0.7rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-bottom: 5px; display: inline-block; }
-        .promo-title { font-family: 'Oswald'; font-size: 1.2rem; color: #fff; line-height: 1.2; text-shadow: 0 0 10px rgba(255, 51, 51, 0.5); }
+        .promo-title { font-family: 'Oswald'; font-size: 1.2rem; color: #fff; line-height: 1.2; }
         .promo-desc { font-size: 0.85rem; color: #ccc; margin-top: 5px; }
         .btn-promo {
-            background: linear-gradient(45deg, #cc0000, #ff3333); /* Gradiente Rojo */
+            background: linear-gradient(45deg, var(--accent-purple), #8a2be2);
             color: #fff; padding: 12px 25px; border-radius: 30px; text-decoration: none;
             font-weight: 700; font-family: 'Oswald'; white-space: nowrap; transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
         }
-        .btn-promo:hover { transform: scale(1.05); box-shadow: 0 5px 25px rgba(255, 0, 0, 0.6); }
+        .btn-promo:hover { transform: scale(1.05); box-shadow: 0 5px 25px rgba(138, 43, 226, 0.6); }
         .close-promo { color: #555; cursor: pointer; font-size: 1.5rem; margin-left: 10px; }
 
         @keyframes slideUp { from {bottom:-150px;} to {bottom:20px;} }
@@ -58,7 +58,7 @@
             flex-wrap: wrap; margin-bottom: 10px;
         }
 
-        /* ANIMACIÓN DE TEXTO */
+        /* REVERTIDO: Animaciones y estilos de la Versión V5 */
         @keyframes neon-pulse-red {
             0%, 100% { text-shadow: 0 0 10px rgba(255, 51, 51, 0.4), 0 0 20px rgba(255, 51, 51, 0.2); }
             50% { text-shadow: 0 0 25px rgba(255, 51, 51, 0.9), 0 0 50px rgba(255, 51, 51, 0.6); transform: scale(1.02); }
@@ -86,19 +86,6 @@
             letter-spacing: 2px;
             animation: neon-pulse-purple 3s infinite alternate ease-in-out;
             animation-delay: 1.5s;
-        }
-
-        /* LOGO ESTÁ DE VUELTA */
-        .logo-mini {
-            width: 50px; height: 50px;
-            animation: spin-float 8s infinite linear;
-            filter: drop-shadow(0 0 10px rgba(179, 102, 255, 0.5));
-        }
-
-        @keyframes spin-float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
-            100% { transform: translateY(0) rotate(0deg); }
         }
 
         /* PAQUETES */
@@ -139,41 +126,43 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-main-line { flex-direction: column; gap: 5px; }
-            .jm-text, .umbra-text { font-size: 2.8rem; }
+            .jm-text, .umbra-text { font-size: 2.8rem; } /* Ajuste de tamaño para móvil */
             .x-text { transform: rotate(90deg); margin: 10px 0; font-size: 1.5rem; }
             .floating-promo { flex-direction: column; text-align: center; }
             
-            .card { padding: 25px 20px; }
-            .plan-name { font-size: 1.8rem; word-wrap: break-word; }
+            /* Ajuste de tarjetas para que no se salga el texto */
+            .card { padding: 20px; }
+            .plan-name { font-size: 1.5rem; word-wrap: break-word; } /* Evita desborde */
             .plan-price { font-size: 2.5rem; }
-            .features-list li { font-size: 0.9rem; }
+            .features-list li { font-size: 0.85rem; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- BARRA FLOTANTE ANUALIDAD (ROJA) -->
+    <!-- BARRA FLOTANTE ANUALIDAD -->
     <div class="floating-promo" id="promoBar">
         <div class="promo-content">
             <span class="promo-badge">🔥 ÚLTIMA OPORTUNIDAD</span>
             <div class="promo-title">¿DECIDIDO A TRANSFORMARTE EN SERIO?</div>
             <div class="promo-desc">
                 Accede a la <strong>Anualidad Elite</strong> con <strong>50% DE DESCUENTO</strong>.<br>
-                Pago único de <span style="color: #fff; font-weight: 700;">$5,645</span> (o 3 MSI). Incluye todo el Plan Premium por 12 meses.
+                Pago único de <span style="color: #fff; font-weight: 700;">$5,645</span> (o 3 MSI).
             </div>
         </div>
-        <a href="https://mpago.li/11xQys5" class="btn-promo">ASEGURAR MI CUPO</a>
+        <a href="#anualidad-section" class="btn-promo" onclick="document.getElementById('promoBar').style.display='none'">VER DETALLES</a>
         <div class="close-promo" onclick="document.getElementById('promoBar').style.display='none'">×</div>
     </div>
 
-    <!-- HERO (CON LOGO) -->
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-main-line">
             <span class="jm-text">JM COACHING</span>
             <span class="x-text">X</span>
             <div class="umbra-container">
                 <span class="umbra-text">UMBRA</span>
-                <img src="logo.png" class="logo-mini" alt="Logo">
+                <!-- Logo Eliminado -->
             </div>
         </div>
     </section>
@@ -232,6 +221,26 @@
                 <li><strong>Prioridad en Dudas:</strong> Tu chat sube de nivel en mi lista de prioridad.</li>
             </ul>
             <a href="https://mpago.li/32b7TdD" class="btn-card">APROVECHAR OFERTA</a>
+        </div>
+
+        <!-- PLAN 4 (ANUALIDAD - NUEVA SECCIÓN) -->
+        <div class="card" id="anualidad-section" style="border: 2px solid var(--accent-red); box-shadow: 0 0 40px rgba(255, 51, 51, 0.2); grid-column: 1 / -1;">
+            <div class="card-header">
+                <div style="color: var(--accent-red); font-size: 1rem; font-weight: 800; margin-bottom: 10px; letter-spacing: 3px; animation: neon-pulse-red 2s infinite;">🏆 NIVEL LEYENDA</div>
+                <h3 class="plan-name">ANUALIDAD ELITE</h3>
+                <div class="plan-price" style="color: var(--accent-red); font-size: 3.5rem;">$5,645</div>
+                <div class="plan-sub">PAGO ÚNICO (O 3 MSI) • 50% OFF</div>
+            </div>
+            <div style="text-align: center; margin-bottom: 20px; color: #fff;">
+                ¿Compromiso total? Llévate todo el año por el precio de 6 meses.
+            </div>
+            <ul class="features-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <li><strong>👑 Acceso VIP x 12 Meses:</strong> Todo lo del Plan Premium sin interrupciones.</li>
+                <li><strong>🥑 BONUS: Recetario UMBRA NUTRITION:</strong> Guía exclusiva con 20 menús flexibles y hacks para no sufrir la dieta.</li>
+                <li><strong>📹 Videollamada Mensual:</strong> 12 sesiones de estrategia personal conmigo.</li>
+                <li><strong>📅 Planificación Anual:</strong> Estructuramos tu año en fases (Volumen/Definición) desde el día 1.</li>
+            </ul>
+            <a href="https://mpago.li/11xQys5" class="btn-card" style="background: var(--accent-red); border: none; font-size: 1.2rem; padding: 20px;">ASEGURAR MI AÑO AHORA</a>
         </div>
 
     </section>
