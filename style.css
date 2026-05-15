@@ -15,7 +15,7 @@
 body { 
     background-color: var(--bg-color); 
     color: var(--text-color); 
-    font-family: 'Manrope', sans-serif; 
+    font-family: 'Poppins', sans-serif; 
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
     scroll-behavior: smooth;
@@ -60,14 +60,14 @@ body {
 
 .promo-badge { background: var(--accent-highlight); color: #000; padding: 3px 8px; font-size: 0.7rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-bottom: 5px; display: inline-block; }
 
-.promo-title { font-family: 'Oswald'; font-size: 1.2rem; color: #fff; line-height: 1.2; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+.promo-title { font-family: 'Poppins'; font-size: 1.2rem; color: #fff; line-height: 1.2; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
 
 .promo-desc { font-size: 0.85rem; color: #ccc; margin-top: 5px; }
 
 .btn-promo {
     background: var(--accent-highlight);
     color: #000; padding: 12px 30px; border-radius: 30px; text-decoration: none;
-    font-weight: 800; font-family: 'Oswald'; white-space: nowrap; transition: 0.3s;
+    font-weight: 800; font-family: 'Poppins'; white-space: nowrap; transition: 0.3s;
     margin-top: 15px; display: inline-block;
     box-shadow: 0 5px 20px rgba(224, 224, 224, 0.3);
     border: 1px solid #fff;
@@ -112,18 +112,18 @@ body {
 }
 
 .jm-text {
-    font-family: 'Oswald'; font-size: 4rem; font-weight: 700;
+    font-family: 'Poppins'; font-size: 4rem; font-weight: 700;
     color: var(--accent-jm);
     letter-spacing: -1px;
     animation: neon-pulse-blue 3s infinite alternate ease-in-out;
 }
 
-.x-text { font-family: 'Oswald'; font-size: 2rem; color: #555; font-weight: 300; margin: 0 10px; }
+.x-text { font-family: 'Poppins'; font-size: 2rem; color: #555; font-weight: 300; margin: 0 10px; }
 
 .umbra-container { display: flex; align-items: center; gap: 15px; }
 
 .umbra-text {
-    font-family: 'Oswald'; font-size: 4rem; font-weight: 700;
+    font-family: 'Poppins'; font-size: 4rem; font-weight: 700;
     color: var(--accent-purple);
     letter-spacing: 2px;
     animation: neon-pulse-purple 3s infinite alternate ease-in-out;
@@ -153,7 +153,7 @@ body {
 .card:hover { transform: translateY(-10px); border-color: var(--accent-clean); }
 
 .card-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #222; }
-.plan-name { font-family: 'Oswald'; font-size: 2rem; color: #fff; }
+.plan-name { font-family: 'Poppins'; font-size: 2rem; color: #fff; }
 .plan-price { font-size: 3rem; font-weight: 800; color: #fff; margin: 15px 0; }
 .plan-sub { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
 
@@ -163,7 +163,7 @@ body {
 
 .btn-card {
     display: block; width: 100%; padding: 18px; text-align: center;
-    background: #222; color: #fff; text-decoration: none; font-family: 'Oswald';
+    background: #222; color: #fff; text-decoration: none; font-family: 'Poppins';
     text-transform: uppercase; font-weight: 700; letter-spacing: 1px; border-radius: 8px;
     transition: 0.3s; border: 1px solid #444;
 }
@@ -231,7 +231,7 @@ body {
 
 /* FAQ */
 .faq-section { max-width: 800px; margin: 0 auto; padding: 50px 20px; padding-bottom: 150px; }
-.faq-title { text-align: center; color: #fff; margin-bottom: 40px; font-family:'Oswald'; }
+.faq-title { text-align: center; color: #fff; margin-bottom: 40px; font-family:'Poppins'; }
 .faq-item { margin-bottom: 30px; }
 .faq-q { color: #fff; font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; }
 .faq-a { color: #aaa; line-height: 1.6; }
