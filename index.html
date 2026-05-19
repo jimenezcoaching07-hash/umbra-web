@@ -4,114 +4,270 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JM COACHING x UMBRA TRAINING</title>
+    <meta name="description" content="Transforma tu cuerpo con JM Coaching y Umbra Training. Planes personalizados con seguimiento profesional y app exclusiva Umbra Shadows.">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- BARRA FLOTANTE OFERTA INDISCUTIBLE -->
+    <!-- BARRA FLOTANTE -->
     <div class="floating-promo" id="promoBar">
         <div class="promo-content">
             <span class="promo-badge">🔥 OFERTA INDISCUTIBLE</span>
             <div class="promo-title">¿DECIDIDO A TRANSFORMARTE EN SERIO?</div>
             <div class="promo-desc">
                 Accede al paquete trimestre más completo.<br>
-                Invierte solo <span style="font-weight: 700; color: #fff;">$2,249</span>.
+                Invierte solo <span style="font-weight:700;color:#fff;">$2,249</span>.
             </div>
         </div>
-        <a href="#trimestral-section" class="btn-promo" id="actionPromoBtn">VER DETALLES</a>
+        <a href="#paquetes" class="btn-promo" id="actionPromoBtn">VER DETALLES</a>
         <div class="close-promo" id="closePromoBtn">×</div>
     </div>
 
-    <!-- HERO -->
+    <!-- ① HERO -->
     <section class="hero">
         <div class="hero-main-line">
             <span class="jm-text">JM COACHING</span>
             <span class="x-text">X</span>
             <div class="umbra-container">
                 <span class="umbra-text">UMBRA</span>
-                <img src="logo.png" class="logo-mini" alt="Logo">
+                <img src="logo.png" class="logo-mini" alt="Logo Umbra">
             </div>
         </div>
     </section>
 
-    <!-- PAQUETES -->
-    <section class="packages-section">
-        
-        <!-- PLAN 2 (PREMIUM) -->
-        <div class="card card-premium">
-            <div class="card-header">
-                <div class="plan-badge">RECOMENDADO</div>
-                <h3 class="plan-name">PREMIUM</h3>
-                <div class="plan-price price-highlight">$1,199</div>
-                <div class="plan-sub">MXN / MES</div>
-            </div>
-            <ul class="features-list">
-                <li><strong>📲 Acceso TOTAL a app "umbra shadows":</strong> Registra cargas, comidas y visualiza tu progreso en gráficas.</li>
-                <li><strong>Videollamada Inicial de Estrategia:</strong> Trazamos el plan juntos basándonos en tu estilo de vida real.</li>
-                <li><strong>Checks Semanales + Feedback:</strong> No estas solo, cada semana analizamos tu progreso para evitar estancamientos.</li>
-                <li><strong>Resolución de Dudas SEMANAL:</strong> Soporte directo para que nunca te quedes con preguntas.</li>
-            </ul>
-            <a href="https://mpago.la/1x8c2ct" class="btn-card btn-premium">QUIERO EL PLAN PREMIUM</a>
-        </div>
+    <!-- ② PREGUNTAS FRECUENTES -->
+    <section class="faq-section" id="faq">
+        <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
 
-        <!-- PLAN 3 (TRIMESTRAL) -->
-        <div class="card" id="trimestral-section">
-            <div class="card-header">
-                <div class="plan-badge">OFERTA INDISCUTIBLE</div>
-                <h3 class="plan-name">TRIMESTRAL PRO</h3>
-                <div class="plan-price">$2,249</div>
-                <div class="plan-sub">PAGO ÚNICO (SOLO 5 PLAZAS DISPONIBLES)</div>
-            </div>
-            <ul class="features-list">
-                <li><strong>Todo el poder del Plan Premium x 3 Meses.</strong></li>
-                <li><strong>📱 BONUS EXCLUSIVO:</strong> Acceso exclusivo prioritario a la app "Umbra Shadows" antes de que sea nativa en App Store y Play Store.</li>
-                <li><strong>Ahorro Inteligente:</strong> Obtienes un precio mensual reducido al comprometerte 90 días.</li>
-                <li><strong>Acompañamiento en Dudas:</strong> Soporte de resolución de dudas semanalmente.</li>
-            </ul>
-            <a href="https://mpago.li/32b7TdD" class="btn-card">APROVECHAR OFERTA</a>
-        </div>
-
-        <!-- PLAN 4 (ANUALIDAD - NUEVA SECCIÓN) -->
-        <div class="card card-elite" id="anualidad-section">
-            <div class="card-header">
-                <div class="plan-badge-elite">🏆 NIVEL LEYENDA</div>
-                <h3 class="plan-name">ANUALIDAD ELITE</h3>
-                <div class="plan-price price-elite">$5,645</div>
-                <div class="plan-sub">PAGO ÚNICO (SOLO 2 PLAZAS DISPONIBLES)</div>
-            </div>
-            <div style="text-align: center; margin-bottom: 20px; color: #fff;">
-                ¿Compromiso total? Llévate todo el año por el precio de 6 meses.
-            </div>
-            <ul class="features-list features-grid">
-                <li><strong>👑 Acceso VIP x 12 Meses:</strong> Todo lo del Plan Premium sin interrupciones.</li>
-                <li><strong>🥑 BONUS: Recetario UMBRA NUTRITION:</strong> Guía exclusiva con 20 menús flexibles y hacks para no sufrir la dieta.</li>
-                <li><strong>📹 Videollamada Mensual:</strong> 6 sesiones de estrategia personal conmigo.</li>
-                <li><strong>📅 Planificación Anual:</strong> Estructuramos tu año en fases (Volumen/Definición) desde el día 1.</li>
-            </ul>
-            <a href="https://mpago.li/11xQys5" class="btn-card btn-elite">ASEGURAR MI AÑO AHORA</a>
-        </div>
-
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section">
-        <h2 class="faq-title">PREGUNTAS FRECUENTES</h2>
-        
         <div class="faq-item">
-            <div class="faq-q">¿Cuándo inicia mi plan?</div>
+            <button class="faq-q" aria-expanded="false">
+                ¿Cuándo inicia mi plan?
+                <span class="faq-chevron">▾</span>
+            </button>
             <div class="faq-a">Tu transformación comienza el día que tú decidas. Al realizar tu pago, tienes la flexibilidad de activar tu plan inmediatamente o reservar tu fecha de inicio para coordinar con tus tiempos. Tu lugar queda asegurado.</div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-q">¿Es para principiantes?</div>
-            <div class="faq-a">Absolutamente. De hecho, empezar con una estructura profesional como la de Umbra (basada en ciencia, no en mitos) te ahorrará años de errores y lesiones. Adaptamos el volumen y la intensidad a tu nivel actual.</div>
+            <button class="faq-q" aria-expanded="false">
+                ¿Para quién es la asesoría?
+                <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-a">Para quienes buscan una transformación definitiva, una mejora indiscutible de hábitos, un mayor entendimiento del entrenamiento. Si estás decidido a comprometerte, esta asesoría es para ti.</div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-q">¿Qué métodos de pago aceptas?</div>
+            <button class="faq-q" aria-expanded="false">
+                ¿Qué métodos de pago aceptas?
+                <span class="faq-chevron">▾</span>
+            </button>
             <div class="faq-a">Aceptamos todas las tarjetas de crédito, débito y pagos en efectivo de forma 100% segura a través de Mercado Pago. También ofrecemos facilidades de meses sin intereses en planes Trimestrales y Anuales.</div>
+        </div>
+    </section>
+
+    <!-- ③ APP UMBRA SHADOWS -->
+    <section class="app-section" id="app-umbra">
+        <div class="app-section-inner">
+            <div class="app-header">
+                <img src="logo.png" alt="Umbra Shadows" class="app-logo">
+                <div>
+                    <h2 class="app-title">UMBRA SHADOWS</h2>
+                    <p class="app-subtitle">Tu entrenamiento en la palma de tu mano</p>
+                </div>
+            </div>
+
+            <div class="app-content">
+                <div class="app-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📊</span>
+                        <div>
+                            <strong>Registra tus entrenamientos</strong>
+                            <p>Control exacto de cargas, series y repeticiones para garantizar progresión real.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🥑</span>
+                        <div>
+                            <strong>Seguimiento de nutrición</strong>
+                            <p>Monitorea macros y calorías diarias para optimizar tu composición corporal.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📈</span>
+                        <div>
+                            <strong>Visualiza tu progreso</strong>
+                            <p>Gráficas detalladas que muestran tu evolución semana a semana.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💬</span>
+                        <div>
+                            <strong>Comunicación directa</strong>
+                            <p>Canal directo con tu coach para resolver dudas en tiempo real.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📅</span>
+                        <div>
+                            <strong>Planificación inteligente</strong>
+                            <p>Tu programa siempre disponible y actualizado al instante.</p>
+                        </div>
+                    </div>
+                    <div class="store-badges">
+                        <span class="store-btn">🍎 App Store</span>
+                        <span class="store-btn">🤖 Google Play</span>
+                    </div>
+                </div>
+
+                <!-- Carrusel screenshots app -->
+                <div class="app-carousel" id="appCarousel">
+                    <div class="app-carousel-track" id="appCarouselTrack">
+                        <div class="app-slide"><img src="app-screen-1.jpg" alt="App pantalla 1"></div>
+                        <div class="app-slide"><img src="app-screen-2.jpg" alt="App pantalla 2"></div>
+                        <div class="app-slide"><img src="app-screen-3.jpg" alt="App pantalla 3"></div>
+                        <div class="app-slide"><img src="app-screen-4.jpg" alt="App pantalla 4"></div>
+                    </div>
+                    <button class="car-btn car-prev" id="appPrev">&#8249;</button>
+                    <button class="car-btn car-next" id="appNext">&#8250;</button>
+                    <div class="car-dots" id="appDots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ④ INICIA TU TRANSFORMACIÓN -->
+    <section class="transform-section" id="transformacion">
+        <h2 class="section-title">INICIA TU TRANSFORMACIÓN</h2>
+        <p class="section-subtitle">Resultados reales de clientes reales</p>
+        <div class="transform-carousel" id="transformCarousel">
+            <div class="transform-track" id="transformTrack">
+                <div class="transform-slide"><img src="cambios mens.jpg" alt="Transformación – Hombres"></div>
+                <div class="transform-slide"><img src="cambios girls.jpg" alt="Transformación – Mujeres"></div>
+            </div>
+            <button class="car-btn car-prev" id="transformPrev">&#8249;</button>
+            <button class="car-btn car-next" id="transformNext">&#8250;</button>
+            <div class="car-dots" id="transformDots"></div>
+        </div>
+    </section>
+
+    <!-- ⑤ PAQUETES EN PESTAÑAS -->
+    <section class="packages-section" id="paquetes">
+        <h2 class="section-title">ELIGE TU PLAN</h2>
+
+        <div class="tabs-nav" role="tablist">
+            <button class="tab-btn" id="tab-premium" role="tab" aria-selected="false" data-tab="premium">
+                <span class="tab-name">PREMIUM</span>
+                <span class="tab-price">$1,199<small>/mes</small></span>
+            </button>
+            <button class="tab-btn tab-featured" id="tab-trimestral" role="tab" aria-selected="true" data-tab="trimestral">
+                <span class="tab-urgency">⚡ SOLO 5 PLAZAS</span>
+                <span class="tab-name">TRIMESTRAL PRO</span>
+                <span class="tab-price">$2,249<small>pago único</small></span>
+            </button>
+            <button class="tab-btn" id="tab-anualidad" role="tab" aria-selected="false" data-tab="anualidad">
+                <span class="tab-name">ANUALIDAD ELITE</span>
+                <span class="tab-price">$5,645<small>pago único</small></span>
+            </button>
+        </div>
+
+        <div class="tab-panels">
+
+            <!-- PANEL PREMIUM -->
+            <div class="tab-panel" id="panel-premium" role="tabpanel" hidden>
+                <div class="panel-top">
+                    <div class="panel-price">$1,199 <small>MXN / MES</small></div>
+                    <button class="btn-incluye" data-target="details-premium">¿Qué incluye? <span class="inc-chev">▾</span></button>
+                </div>
+                <div class="package-details" id="details-premium">
+                    <ul class="features-list">
+                        <li><strong>📲 Acceso TOTAL a app "Umbra Shadows":</strong> Registra cargas, comidas y visualiza tu progreso en gráficas.</li>
+                        <li><strong>Videollamada Inicial de Estrategia:</strong> Trazamos el plan juntos basándonos en tu estilo de vida real.</li>
+                        <li><strong>Checks Semanales + Feedback:</strong> No estás solo, cada semana analizamos tu progreso para evitar estancamientos.</li>
+                        <li><strong>Resolución de Dudas SEMANAL:</strong> Soporte directo para que nunca te quedes con preguntas.</li>
+                    </ul>
+                    <a href="https://mpago.la/1x8c2ct" class="btn-card btn-premium">QUIERO EL PLAN PREMIUM</a>
+                </div>
+            </div>
+
+            <!-- PANEL TRIMESTRAL -->
+            <div class="tab-panel panel-featured" id="panel-trimestral" role="tabpanel">
+                <div class="trim-banner">🔥 OFERTA INDISCUTIBLE — <strong>SOLO 5 PLAZAS DISPONIBLES</strong></div>
+                <div class="panel-top">
+                    <div>
+                        <div class="panel-price featured-price">$2,249 <small>PAGO ÚNICO</small></div>
+                        <div class="price-equiv">≈ $749 / mes — vs $1,199/mes en Premium (ahorras $348 al mes)</div>
+                    </div>
+                    <button class="btn-incluye btn-incluye-feat" data-target="details-trimestral">¿Qué incluye? <span class="inc-chev open">▴</span></button>
+                </div>
+                <div class="package-details details-open" id="details-trimestral">
+                    <ul class="features-list">
+                        <li><strong>📲 Acceso TOTAL a app "Umbra Shadows":</strong> Ya disponible en App Store. Registra cargas, comidas y visualiza tu progreso en gráficas.</li>
+                        <li><strong>Videollamada Inicial de Estrategia:</strong> Trazamos el plan juntos basándonos en tu estilo de vida real.</li>
+                        <li><strong>Checks Semanales + Feedback:</strong> No estás solo, cada semana analizamos tu progreso para evitar estancamientos.</li>
+                        <li><strong>Resolución de Dudas SEMANAL:</strong> Soporte directo para que nunca te quedes con preguntas.</li>
+                        <li><strong>Acompañamiento Total × 3 Meses:</strong> Todo lo anterior durante 90 días completos sin interrupciones.</li>
+                    </ul>
+                    <div class="savings-box">
+                        <div class="savings-title">💰 Tu ahorro real al elegir el Trimestre</div>
+                        <div class="savings-grid">
+                            <div class="savings-col">
+                                <div class="savings-label">3 meses en Premium</div>
+                                <div class="savings-old">$3,597</div>
+                                <div class="savings-sub">($1,199 × 3 meses)</div>
+                            </div>
+                            <div class="savings-vs">VS</div>
+                            <div class="savings-col savings-col--win">
+                                <div class="savings-label">Trimestral PRO</div>
+                                <div class="savings-new">$2,249</div>
+                                <div class="savings-save">Ahorras $1,348 🎉</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trim-spots">🔴 <strong>PLAZAS RESTANTES: 5 de 5</strong> — No dejes pasar tu lugar</div>
+                    <a href="https://mpago.li/32b7TdD" class="btn-card btn-trimestral" id="trimestral-section">APROVECHAR OFERTA — $2,249</a>
+                </div>
+            </div>
+
+            <!-- PANEL ANUALIDAD -->
+            <div class="tab-panel" id="panel-anualidad" role="tabpanel" hidden>
+                <div class="anual-banner">🏆 NIVEL LEYENDA — <strong>ÚNICAMENTE 2 PLAZAS DISPONIBLES</strong></div>
+                <div class="panel-top">
+                    <div>
+                        <div class="panel-price elite-price">$5,645 <small>PAGO ÚNICO</small></div>
+                        <div class="price-equiv">≈ $470 / mes — el precio más bajo por mes de todos los planes</div>
+                    </div>
+                    <button class="btn-incluye" data-target="details-anualidad">¿Qué incluye? <span class="inc-chev">▾</span></button>
+                </div>
+                <div class="package-details" id="details-anualidad">
+                    <p style="text-align:center;color:#fff;margin-bottom:20px;">¿Compromiso total? Llévate todo el año por el precio de 6 meses.</p>
+                    <ul class="features-list features-grid">
+                        <li><strong>👑 Acceso VIP × 12 Meses:</strong> Todo lo del Plan Premium sin interrupciones.</li>
+                        <li><strong>🥑 BONUS: Recetario UMBRA NUTRITION:</strong> Guía exclusiva con 20 menús flexibles y hacks para no sufrir la dieta.</li>
+                        <li><strong>📹 Videollamada Mensual:</strong> 6 sesiones de estrategia personal conmigo.</li>
+                        <li><strong>📅 Planificación Anual:</strong> Estructuramos tu año en fases (Volumen/Definición) desde el día 1.</li>
+                    </ul>
+                    <div class="savings-box savings-box--elite">
+                        <div class="savings-title">💰 Tu ahorro real al elegir la Anualidad</div>
+                        <div class="savings-grid">
+                            <div class="savings-col">
+                                <div class="savings-label">12 meses en Premium</div>
+                                <div class="savings-old">$14,388</div>
+                                <div class="savings-sub">($1,199 × 12 meses)</div>
+                            </div>
+                            <div class="savings-vs">VS</div>
+                            <div class="savings-col savings-col--win">
+                                <div class="savings-label">Anualidad Elite</div>
+                                <div class="savings-new">$5,645</div>
+                                <div class="savings-save">Ahorras $8,743 🎉</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anual-spots">🔴 <strong>PLAZAS DISPONIBLES: 2 de 2</strong> — Cupo extremadamente limitado</div>
+                    <a href="https://mpago.li/11xQys5" class="btn-card btn-elite" id="anualidad-section">ASEGURAR MI AÑO AHORA</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
