@@ -297,7 +297,7 @@ body {
     max-height: 0; overflow: hidden;
     transition: max-height 0.4s ease, padding-top 0.3s ease;
 }
-.package-details.details-open { max-height: 800px; }
+.package-details.details-open { max-height: 2000px; }
 
 .features-list { list-style: none; margin-bottom: 28px; }
 .features-list li {
